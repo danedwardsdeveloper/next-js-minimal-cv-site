@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--font-family: 'Courier New', Consolas, Monaco, monospace;
+	--color-background: #ffffff;
+	--color-text: #333333;
+	--color-primary: #3498db;
+	--color-secondary: #2ecc71;
+}
+
+body {
+	font-family: var(--font-family);
+	background-color: var(--color-background);
+	color: var(--color-text);
+}
