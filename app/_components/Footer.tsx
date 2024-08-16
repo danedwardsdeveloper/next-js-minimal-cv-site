@@ -1,16 +1,12 @@
 import SimpleAnalyticsBadge from './SimpleAnalyticsBadge';
 
 import { copy } from '../_library/copy';
-// import FlyoutMenu from './FlyoutMenu';
-// import { ThemeSwitcher } from './ThemeSwitcher';
 
 export default function Footer() {
 	return (
-		<footer className="flex">
+		<footer className="col-span-full flex-col-reverse md:flex-row gap-4 md:gap-0 md:row-start-2 flex justify-between md:items-end mb-10">
 			<SimpleAnalyticsBadge />
-			{/* <FlyoutMenu /> */}
-			{/* <ThemeSwitcher /> */}
-			<p className="copyright-notice text-xsm">{copy.copyright}</p>
+			<p className="text-xs">{copy.copyright}</p>
 		</footer>
 	);
 }
