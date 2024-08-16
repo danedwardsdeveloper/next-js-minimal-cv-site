@@ -6,11 +6,9 @@ import { PortfolioPiece as PortfolioPieceProps } from '../_types/types';
 
 export default function PortfolioSection() {
 	return (
-		<section className="section">
-			<HorizontalRule colour="purple-800" />
-			<h2 className="section-heading pb-1 section-heading--accent-2 font-bold uppercase text-purple-800">
-				Portfolio
-			</h2>
+		<section className="mb-12">
+			<HorizontalRule colour="typescript" />
+			<h2 className="pb-1 font-bold uppercase text-typescript">Portfolio</h2>
 
 			{copy.portfolio.map(
 				(portfolioPiece: PortfolioPieceProps, index: number) => (
