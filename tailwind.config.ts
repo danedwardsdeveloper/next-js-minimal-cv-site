@@ -8,7 +8,9 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
-			theme: 'var(--font-family)',
+			fontFamily: {
+				theme: 'var(--font-family)',
+			},
 			keyframes: {
 				'fade-in': {
 					'0%': { opacity: '0' },
@@ -18,17 +20,17 @@ const config: Config = {
 			animation: {
 				'fade-in': 'fadeIn 2s ease-out forwards',
 			},
-		},
-		colors: {
-			typescript: '#3178C6',
-			'typescript-light': '#358EF1',
-			'typescript-dark': '#235A97',
-			'typescript-extra-dark': '#00273F',
-			theme: {
-				text: 'var(--color-text)',
-				background: 'var(--color-background)',
-				primary: 'var(--color-primary)',
-				secondary: 'var(--color-secondary)',
+			colors: {
+				typescript: '#3178C6',
+				'typescript-light': '#358EF1',
+				'typescript-dark': '#235A97',
+				'typescript-extra-dark': '#00273F',
+				theme: {
+					text: 'var(--color-text)',
+					background: 'var(--color-background)',
+					primary: 'var(--color-primary)',
+					secondary: 'var(--color-secondary)',
+				},
 			},
 		},
 	},
@@ -50,4 +52,5 @@ const config: Config = {
 		'border-typescript-extra-dark',
 	],
 };
+
 export default config;
