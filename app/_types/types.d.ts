@@ -1,3 +1,5 @@
+import { DO_NOT_USE_OR_YOU_WILL_BE_FIRED_EXPERIMENTAL_CREATE_ROOT_CONTAINERS } from 'react-dom/client';
+
 export interface CopyTypes {
 	name: string;
 	title: string;
@@ -5,13 +7,13 @@ export interface CopyTypes {
 	portfolio: PortfolioPiece[];
 	workHistory: WorkHistoryItem[];
 	skills: Skills;
-	education: EducationItem[];
+	education: Education;
 	contact: Contact;
 	copyright: string;
 	metadata: Metadata;
 }
 
-export interface PortfolioPiece {
+interface PortfolioPiece {
 	name: string;
 	githubLink: string;
 	link: string;
@@ -19,18 +21,22 @@ export interface PortfolioPiece {
 	details: string[];
 }
 
-export interface WorkHistoryItem {
+interface WorkHistoryItem {
 	title: string;
 	company: string;
 	period: string;
 	responsibilities: string[];
 }
 
+interface Education {
+	sectionTitle: string;
+	educationItems: EducationItem[];
+}
+
 interface EducationItem {
 	institution: string;
 	period: string;
-	program?: string;
-	degree?: string;
+	course: string;
 }
 
 interface Skills {
@@ -38,7 +44,14 @@ interface Skills {
 }
 
 interface Contact {
-	email: boolean;
+	sectionTitle: string;
+	contactItems: ContactItem[];
+}
+
+interface ContactItem {
+	name: string;
+	value: string;
+	display: boolean;
 }
 
 interface Metadata {
@@ -47,7 +60,7 @@ interface Metadata {
 	keywords: string[];
 }
 
-export type ThemeName = 'Default' | 'Elegant' | '90s' | 'Vibrant' | 'Chaotic';
+type ThemeName = 'Default' | 'Elegant' | '90s' | 'Vibrant' | 'Chaotic';
 
 export interface Theme {
 	name: ThemeName;
