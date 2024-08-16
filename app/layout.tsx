@@ -1,5 +1,5 @@
 import type { Viewport, Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 import './globals.tailwind.css';
 import { validateEnvironment } from './_utilities/environment';
 validateEnvironment();
@@ -17,7 +17,11 @@ export const metadata: Metadata = {
 	...baseMetadata,
 };
 
-const inter = Inter({ subsets: ['latin'] });
+const poppins = Poppins({
+	weight: ['500', '700'],
+	subsets: ['latin'],
+	variable: '--font-poppins',
+});
 
 export default function RootLayout({
 	children,
@@ -28,14 +32,14 @@ export default function RootLayout({
 		<ThemeProvider>
 			<html lang="en-GB">
 				<body
-					className={`${inter.className} m-0`}
+					className={`${poppins.variable} m-0`}
 					style={{
-						fontFamily: 'var(--font-family)',
+						fontFamily: 'var(--font-poppins), Arial, sans-serif',
 						backgroundColor: 'var(--color-background)',
 						color: 'var(--color-text)',
 					}}
 				>
-					<div className="page-container text-primary line-height--1-3 font-mono text-md grid">
+					<div className="page-container text-primary line-height--1-3  text-md grid">
 						{children}
 					</div>
 					<SimpleAnalyticsScript />
