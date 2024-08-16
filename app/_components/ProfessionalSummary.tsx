@@ -1,12 +1,12 @@
-'use client';
-import { copy } from '../_library/copy';
 import HorizontalRule from './HorizontalRule';
+
+import { copy } from '../_library/copy';
 
 export default function ProfessionalSummary() {
 	return (
-		<section className="section section--small">
-			<HorizontalRule colour="blue-800" />
-			<h1 className="section-heading pb-1 section-heading--accent-1 font-bold uppercase text-blue-800 text-base font-theme text-theme-text">
+		<section className="mt-8 md:mt-28 mb-12">
+			<HorizontalRule colour="typescript" />
+			<h1 className=" font-bold uppercase text-typescript text-base">
 				<span className="block lg:inline">{copy.name}</span>
 				<span className="hidden lg:inline text-gray-400" aria-hidden="true">
 					&nbsp;|&nbsp;
@@ -14,16 +14,7 @@ export default function ProfessionalSummary() {
 				<span className="block lg:inline">{copy.title}</span>
 				<span className="sr-only">: </span>
 			</h1>
-			<p
-				className="text-justify text-base"
-				style={{
-					fontFamily: 'var(--font-family)',
-					color: 'var(--color-text)',
-					backgroundColor: 'var(--color-background)',
-				}}
-			>
-				{copy.summary}
-			</p>
+			<p className="text-justify text-base">{copy.summary}</p>
 		</section>
 	);
 }
