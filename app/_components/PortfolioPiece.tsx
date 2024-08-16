@@ -1,7 +1,9 @@
 import Link from 'next/link';
-import { ArrowRightCircleIcon } from '@heroicons/react/24/outline';
 
 import { PortfolioPiece as PortfolioPieceProps } from '../_types/types';
+
+import Icon from './Icon';
+import { globalStyles } from '../_library/themes';
 
 export default function PortfolioPiece({
 	name,
@@ -15,7 +17,7 @@ export default function PortfolioPiece({
 			<h3 className="font-bold uppercase mt-3 mb-1">
 				<Link
 					href={link}
-					className="hover-animation hover-animation--purple text-purple-800"
+					className="hover-animation hover-animation--purple text-typescript"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
@@ -24,7 +26,7 @@ export default function PortfolioPiece({
 				<span className="text-gray-400">&nbsp;|&nbsp;</span>
 				<Link
 					href={githubLink}
-					className="hover-animation hover-animation--purple text-purple"
+					className=" text-typescript"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
@@ -34,11 +36,9 @@ export default function PortfolioPiece({
 			<p className="mb-4">{description}</p>
 			<ul>
 				{details.map((detail, index) => (
-					<li className="mb-2" key={index}>
+					<li className={globalStyles.listItemMargin} key={index}>
 						<div className="flex justify-items-start">
-							<ArrowRightCircleIcon
-								className={`size-6 flex-shrink-0 text-purple-800 mr-2`}
-							/>
+							<Icon name="arrow" size={32} colour="text-typescript" />
 							<span>{detail}</span>
 						</div>
 					</li>
