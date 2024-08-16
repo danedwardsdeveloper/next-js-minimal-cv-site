@@ -2,7 +2,7 @@ import type { CopyTypes } from '../_types/types';
 
 export const copy: CopyTypes = {
 	name: 'Dan Edwards',
-	title: 'Full-stack web developer',
+	title: 'Full-stack TypeScript developer',
 	summary:
 		'Specializing in intuitive, responsive, and high-performance websites. Leverages cutting-edge technologies to deliver professional, maintainable code. Known for high standards, strong collaboration skills, and continuous learning. Currently developing a MERN (MongoDB, Express, React and Node.js) eCommerce bookshop.',
 
@@ -83,7 +83,7 @@ export const copy: CopyTypes = {
 
 	skills: {
 		'Front-End Skills': [
-			'HTML 5',
+			'Semantic HTML 5',
 			'CSS 3, Less, Sass & BEM',
 			'JavaScript ES6 & TypeScript',
 			'Asynchronous programming',
@@ -121,21 +121,46 @@ export const copy: CopyTypes = {
 		],
 	},
 
-	education: [
-		{
-			institution: 'Codecademy',
-			period: 'November 2023-Present',
-			program: 'Full-Stack Engineer Career Path',
-		},
-		{
-			institution: 'Trinity College of Music, London',
-			period: '2010-2014',
-			degree: 'Bachelor of Music, Cello',
-		},
-	],
+	education: {
+		sectionTitle: 'Education',
+		educationItems: [
+			{
+				institution: 'Codecademy',
+				period: 'November 2023-Present',
+				course: 'Full-Stack Engineer Career Path',
+			},
+			{
+				institution: 'Trinity College of Music, London',
+				period: '2010-2014',
+				course: 'Bachelor of Music, Cello',
+			},
+		],
+	},
 
 	contact: {
-		email: true,
+		sectionTitle: 'Contact',
+		contactItems: [
+			{
+				name: 'email',
+				value: 'danedwardscreative@gmail.com',
+				display: true,
+			},
+			{
+				name: 'GitHub',
+				value: 'https://github.com/danedwardsdeveloper',
+				display: true,
+			},
+			{
+				name: 'Website',
+				value: 'https://danedwardsdeveloper.com/',
+				display: false,
+			},
+			{
+				name: 'Linkedin',
+				value: 'https://www.linkedin.com/in/dan-e-8bbb112ab/',
+				display: false,
+			},
+		],
 	},
 
 	copyright: '© Dan Edwards, 2024',
