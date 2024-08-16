@@ -1,11 +1,15 @@
 import { Theme, ThemeName } from '../_types/types';
 
+export const globalStyles = {
+	listItemMargin: 'mb-3',
+};
+
 export const themes: Record<ThemeName, Theme> = {
 	Default: {
 		name: 'Default',
-		fontFamily: `'Courier New', Consolas, Monaco, monospace`,
+		fontFamily: `'Poppins', 'Arial', sans-serif`,
 		colors: {
-			primary: 'blue-800',
+			primary: 'typescript',
 			secondary: '#2ecc71',
 			background: '#ffffff',
 			text: '#333333',
