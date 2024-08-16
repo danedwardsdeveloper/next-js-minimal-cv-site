@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
+
 import { copy } from './copy';
+import { getFaviconMetadata } from './Favicon';
 
-export const baseMetadata: Metadata = generateMetadata();
-
-export function generateMetadata(): Metadata {
+export const generateMetadata = (): Metadata => {
 	return {
 		title: {
 			default: copy.metadata.title,
@@ -24,5 +24,8 @@ export function generateMetadata(): Metadata {
 			title: copy.metadata.title,
 			description: copy.metadata.description,
 		},
+		icons: getFaviconMetadata(),
 	};
-}
+};
+
+export const baseMetadata: Metadata = generateMetadata();
