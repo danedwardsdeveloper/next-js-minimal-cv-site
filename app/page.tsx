@@ -11,7 +11,6 @@ export default function Home() {
 	return (
 		<div className="flex flex-col min-h-screen">
 			<MenuBar />
-
 			<div className="grid grid-cols-1 md:grid-cols-[1fr,2fr] gap-6 md:gap-20 mx-6 md:mx-10 lg:mx-20 animate-fade-in flex-grow">
 				<main className="md:col-start-2 md:col-end-3 flex-grow max-w-[550px]">
 					<ProfessionalSummary />
