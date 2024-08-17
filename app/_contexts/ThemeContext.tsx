@@ -1,41 +1,31 @@
 'use client';
-import React, { createContext, useState, useEffect, useContext } from 'react';
+import { createContext, useState, useEffect, useContext } from 'react';
 
-import { ThemeName } from '../_types/types';
-import { themes } from '../_library/themes';
+import { ThemeOptions } from '../_types/types';
 
 type ThemeContext = {
-	theme: ThemeName;
-	setTheme: (theme: ThemeName) => void;
+	theme: ThemeOptions;
+	setTheme: (theme: ThemeOptions) => void;
 };
 
 export const ThemeContext = createContext<ThemeContext | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-	const [theme, setTheme] = useState<ThemeName>('Default');
+	const [theme, setTheme] = useState<ThemeOptions>('light');
 
 	useEffect(() => {
-		const savedTheme = localStorage.getItem('theme') as ThemeName | null;
-		if (savedTheme && themes[savedTheme]) {
+		const savedTheme = localStorage.getItem('theme') as ThemeOptions | null;
+		if (savedTheme === 'light' || savedTheme === 'dark') {
 			setTheme(savedTheme);
+		} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			setTheme('dark');
 		}
 	}, []);
 
 	useEffect(() => {
 		const root = document.documentElement;
-		const currentTheme = themes[theme];
-
-		root.style.setProperty('--font-family', currentTheme.fontFamily);
-		root.style.setProperty(
-			'--color-background',
-			currentTheme.colors.background
-		);
-		root.style.setProperty('--color-text', currentTheme.colors.text);
-		root.style.setProperty('--color-primary', currentTheme.colors.primary);
-		root.style.setProperty(
-			'--color-secondary',
-			currentTheme.colors.secondary
-		);
+		root.classList.remove('light', 'dark');
+		root.classList.add(theme);
 
 		localStorage.setItem('theme', theme);
 	}, [theme]);
