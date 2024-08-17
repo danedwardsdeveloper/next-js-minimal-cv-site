@@ -60,10 +60,8 @@ interface Metadata {
 	keywords: string[];
 }
 
-type ThemeName = 'Default' | 'Elegant' | '90s' | 'Vibrant' | 'Chaotic';
-
 export interface Theme {
-	name: ThemeName;
+	name: ThemeOptions;
 	fontFamily: string;
 	colors: {
 		primary: string;
@@ -72,3 +70,5 @@ export interface Theme {
 		text: string;
 	};
 }
+
+export type ThemeOptions = 'light' | 'dark';
