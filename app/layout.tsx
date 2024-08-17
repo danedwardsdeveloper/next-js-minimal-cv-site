@@ -29,12 +29,11 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<ThemeProvider>
-			<html lang="en-GB">
+		<html lang="en-GB" className={poppins.variable}>
+			<ThemeProvider>
 				<body
-					className={`${poppins.variable} m-0`}
+					className="m-0 font-sans transition-all duration-1000"
 					style={{
-						fontFamily: 'var(--font-poppins), Arial, sans-serif',
 						backgroundColor: 'var(--color-background)',
 						color: 'var(--color-text)',
 					}}
@@ -44,7 +43,7 @@ export default function RootLayout({
 					</div>
 					<SimpleAnalyticsScript />
 				</body>
-			</html>
-		</ThemeProvider>
+			</ThemeProvider>
+		</html>
 	);
 }
