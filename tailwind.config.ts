@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
+	darkMode: 'selector',
 	content: [
 		'./pages/**/*.{js,ts,jsx,tsx,mdx}',
 		'./components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -9,7 +10,22 @@ const config: Config = {
 	theme: {
 		extend: {
 			fontFamily: {
-				theme: 'var(--font-family)',
+				sans: ['var(--font-poppins)', 'Arial', 'sans-serif'],
+			},
+			colors: {
+				typescript: {
+					DEFAULT: '#3178C6',
+					light: '#358EF1',
+					dark: '#235A97',
+					'extra-dark': '#00273F',
+				},
+				theme: {
+					text: 'var(--color-text)',
+					background: 'var(--color-background)',
+					primary: 'var(--color-primary)',
+					secondary: 'var(--color-secondary)',
+					border: 'var(--color-border)',
+				},
 			},
 			keyframes: {
 				'fade-in': {
@@ -20,36 +36,14 @@ const config: Config = {
 			animation: {
 				'fade-in': 'fadeIn 2s ease-out forwards',
 			},
-			colors: {
-				typescript: '#3178C6',
-				'typescript-light': '#358EF1',
-				'typescript-dark': '#235A97',
-				'typescript-extra-dark': '#00273F',
-				theme: {
-					text: 'var(--color-text)',
-					background: 'var(--color-background)',
-					primary: 'var(--color-primary)',
-					secondary: 'var(--color-secondary)',
-				},
-			},
 		},
 	},
 	plugins: [],
 	safelist: [
-		'border-purple-800',
-		'border-blue-800',
-		'border-black',
-		'border-blue-800',
-		'border-green-800',
-		'border-red-800',
-		'border-typescript',
-		'text-typescript',
-		'border-typescript-light',
-		'text-typescript-light',
-		'text-typescript-dark',
-		'border-typescript-dark',
-		'text-typescript-extra-dark',
-		'border-typescript-extra-dark',
+		...['', '-light', '-dark', '-extra-dark'].flatMap((suffix) => [
+			`border-typescript${suffix}`,
+			`text-typescript${suffix}`,
+		]),
 	],
 };
 
