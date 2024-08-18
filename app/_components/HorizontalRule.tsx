@@ -1,9 +1,7 @@
 export default function HorizontalRule({
-	colour = 'black',
+	colour = 'border-theme-primary',
 }: {
 	colour?: string;
 }) {
-	return (
-		<hr className={`border-t-4 rounded-full mb-1 border-theme-primary`} />
-	);
+	return <hr className={`border-t-4 rounded-full mb-1 ${colour} `} />;
 }
