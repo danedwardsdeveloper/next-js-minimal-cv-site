@@ -1,14 +1,15 @@
-import { copy } from '../_library/copy';
 import WorkHistoryItem from './WorkHistoryItem';
 import HorizontalRule from './HorizontalRule';
 
-import { WorkHistoryItem as WorkHistoryItemProps } from '../_types/types';
+import { copy } from '../_library/copy';
+
+import { WorkHistoryItem as WorkHistoryItemProps } from '../types';
 
 export default function WorkHistorySection() {
 	return (
 		<section>
-			<HorizontalRule colour="typescript" />
-			<h2 className="pb-1 font-bold uppercase text-typescript">
+			<HorizontalRule />
+			<h2 className="pb-1 font-bold uppercase text-theme-primary">
 				Work history
 			</h2>
 			{copy.workHistory.map(
