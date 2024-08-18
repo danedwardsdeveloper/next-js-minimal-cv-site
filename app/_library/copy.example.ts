@@ -1,137 +1,99 @@
-import type { CopyTypes } from '../_types/types';
+import type { CopyTypes } from '../types';
 
 export const copy: CopyTypes = {
-	name: 'Jane Doe',
-	title: 'Full-stack JavaScript Developer',
-	summary:
-		'Passionate about creating efficient and user-friendly web applications. Experienced in modern JavaScript frameworks and back-end technologies. Strong problem-solving skills and a keen eye for design.',
+	name: 'Example Name',
+	title: 'Example Title',
+	summary: 'This is an example summary. Replace with your actual summary.',
 
 	portfolio: [
 		{
-			name: 'Project Alpha',
-			githubLink: 'https://github.com/janedoe/project-alpha',
-			link: 'https://project-alpha.example.com',
-			description: 'A React-based task management application',
-			details: [
-				'Implemented drag-and-drop functionality for task organization',
-				'Integrated with a RESTful API for data persistence',
-				'Utilized Redux for state management',
-			],
+			name: 'Example Project',
+			githubLink: 'https://github.com/example/project',
+			link: 'https://example-project.com',
+			description: 'This is an example project description',
+			details: ['Example detail 1', 'Example detail 2', 'Example detail 3'],
 		},
-		{
-			name: 'Beta Blog',
-			githubLink: 'https://github.com/janedoe/beta-blog',
-			link: 'https://beta-blog.example.com',
-			description: 'A full-stack blog platform using Node.js and Express',
-			details: [
-				'Developed a custom CMS for content management',
-				'Implemented user authentication and authorization',
-				'Optimized database queries for improved performance',
-			],
-		},
+		// Add more example projects as needed
 	],
 
 	workHistory: [
 		{
-			title: 'Senior Front-end Developer',
-			company: 'Tech Innovations Inc.',
-			period: '2020-2023',
+			title: 'Example Job Title',
+			company: 'Example Company',
+			period: 'YYYY-YYYY',
 			responsibilities: [
-				'Led a team of 5 developers in creating responsive web applications',
-				'Implemented best practices for code quality and performance',
-				'Mentored junior developers and conducted code reviews',
+				'Example responsibility 1',
+				'Example responsibility 2',
+				'Example responsibility 3',
 			],
 		},
-		{
-			title: 'Full-stack Developer',
-			company: 'WebSolutions Co.',
-			period: '2017-2020',
-			responsibilities: [
-				'Developed and maintained multiple client websites',
-				'Collaborated with design team to implement UI/UX improvements',
-				'Integrated third-party APIs and services',
-			],
-		},
+		// Add more example work history items as needed
 	],
 
 	skills: {
-		'Front-End Skills': [
-			'HTML5',
-			'CSS3',
-			'JavaScript (ES6+)',
-			'React',
-			'Vue.js',
-			'Webpack',
-			'Responsive Design',
+		'Example Skill Category 1': [
+			'Example Skill 1',
+			'Example Skill 2',
+			'Example Skill 3',
 		],
-		'Back-End Skills': [
-			'Node.js',
-			'Express',
-			'Python',
-			'Django',
-			'RESTful APIs',
-			'GraphQL',
+		'Example Skill Category 2': [
+			'Example Skill 4',
+			'Example Skill 5',
+			'Example Skill 6',
 		],
-		'Database Skills': ['MongoDB', 'PostgreSQL', 'MySQL'],
+		'Example Skill Category 3': [
+			'Example Skill 7',
+			'Example Skill 8',
+			'Example Skill 9',
+		],
 	},
 
 	education: {
 		sectionTitle: 'Education',
 		educationItems: [
 			{
-				institution: 'University of Technology',
-				period: '2013-2017',
-				course: 'Bachelor of Science in Computer Science',
+				institution: 'Example Institution',
+				period: 'YYYY-YYYY',
+				course: 'Example Course',
 			},
-			{
-				institution: 'Code Academy',
-				period: '2018',
-				course: 'Advanced JavaScript Certification',
-			},
+			// Add more example education items as needed
 		],
 	},
 
 	contact: {
 		sectionTitle: 'Contact',
+		email: {
+			name: 'Email',
+			plainValue: 'example@example.com',
+			// Encode your email address at https://www.base64encode.org/
+			encodedValue: 'ZXhhbXBsZUBleGFtcGxlLmNvbQ==',
+			copyMessage: 'Copied to clipboard',
+			display: true,
+		},
 		contactItems: [
 			{
-				name: 'email',
-				value: 'jane.doe@example.com',
-				display: true,
-			},
-			{
 				name: 'GitHub',
-				value: 'https://github.com/janedoe',
+				value: 'https://github.com/example',
 				display: true,
 			},
 			{
 				name: 'Website',
-				value: 'https://janedoe.dev',
+				value: 'https://example.com',
 				display: true,
 			},
 			{
 				name: 'LinkedIn',
-				value: 'https://www.linkedin.com/in/janedoe',
-				display: false,
+				value: 'https://www.linkedin.com/in/example',
+				display: true,
 			},
 		],
 	},
 
-	copyright: '© Jane Doe, 2024',
+	copyright: '© Example Name, YYYY',
 
 	metadata: {
-		title: 'Jane Doe | Full-stack JavaScript Developer',
-		description:
-			'Portfolio and resume of Jane Doe, an experienced full-stack JavaScript developer specializing in React and Node.js.',
-		keywords: [
-			'web developer',
-			'full-stack',
-			'JavaScript',
-			'React',
-			'Node.js',
-			'Express',
-			'MongoDB',
-			'Vue.js',
-		],
+		title: 'Example Name | Example Title',
+		description: 'Example description for metadata.',
+		keywords: ['example', 'keywords', 'for', 'metadata'],
 	},
 };
