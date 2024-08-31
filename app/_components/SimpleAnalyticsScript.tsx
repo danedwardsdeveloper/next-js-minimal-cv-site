@@ -1,5 +1,6 @@
 import Script from 'next/script';
-import { environment } from '../_utilities/environment';
+
+import { environment } from '../environment';
 
 export default function SimpleAnalyticsScript() {
 	return (
