@@ -1,7 +1,7 @@
 import type { Viewport, Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.tailwind.css';
-import { validateEnvironment } from './_utilities/environment';
+import { validateEnvironment } from './environment';
 validateEnvironment();
 
 import { baseMetadata } from './_library/Metadata';
