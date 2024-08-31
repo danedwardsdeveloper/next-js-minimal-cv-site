@@ -16,6 +16,7 @@ export default function SimpleAnalyticsBadge() {
 				/>
 				<img
 					src="https://simpleanalyticsbadges.com/danedwardsdeveloper.com?mode=light"
+					alt="Simple analytics"
 					loading="lazy"
 					referrerPolicy="no-referrer"
 					crossOrigin="anonymous"
