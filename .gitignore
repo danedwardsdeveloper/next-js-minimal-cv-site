@@ -34,9 +34,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-# Deploy script
-**deploy.js
+.env
 
 # My writing (cringe!)
 **/copy.ts
