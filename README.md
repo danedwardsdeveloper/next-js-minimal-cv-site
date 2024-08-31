@@ -1,4 +1,6 @@
-# Dan Edwards Developer
+# Next.js Minimal CV Site
+
+## Live preview: [DanEdwardsDeveloper.com](https://danedwardsdeveloper.com/)
 
 Super simple looking static web developer CV site. All site copy is imported from `app/_library/copy.ts` - this keeps concerns separated and makes it super easy to update the CV - something I do very regularly to reflect the projects I've build and technologies I've learned.
 
@@ -6,6 +8,8 @@ Super simple looking static web developer CV site. All site copy is imported fro
 
 -  Next.js
 -  Tailwind CSS
+-  Written in TypeScript
+-  Deployed with [Fly.io](Fly.io)
 
 ## Installation
 
