@@ -13,9 +13,10 @@ export default function PortfolioSection() {
 			</h2>
 
 			{copy.portfolio.map(
-				(portfolioPiece: PortfolioPieceProps, index: number) => (
-					<PortfolioPiece key={index} {...portfolioPiece} />
-				)
+				(portfolioPiece: PortfolioPieceProps, index) =>
+					portfolioPiece.display && (
+						<PortfolioPiece key={index} {...portfolioPiece} />
+					)
 			)}
 		</section>
 	);
