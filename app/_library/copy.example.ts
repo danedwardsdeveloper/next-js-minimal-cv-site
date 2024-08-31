@@ -8,6 +8,7 @@ export const copy: CopyTypes = {
 	portfolio: [
 		{
 			name: 'Example Project',
+			display: true,
 			githubLink: 'https://github.com/example/project',
 			link: 'https://example-project.com',
 			description: 'This is an example project description',
@@ -66,7 +67,7 @@ export const copy: CopyTypes = {
 			name: 'Email',
 			plainValue: 'example@example.com',
 			// Encode your email address at https://www.base64encode.org/
-			encodedValue: 'ZXhhbXBsZUBleGFtcGxlLmNvbQ==',
+			encodedValue: 'ZXBsZUBleGFtcGxlLmNvbQ==',
 			copyMessage: 'Copied to clipboard',
 			display: true,
 		},
