@@ -13,8 +13,9 @@ export interface CopyTypes {
 
 interface PortfolioPiece {
 	name: string;
-	githubLink: string;
+	display: boolean;
 	link: string;
+	githubLink: string;
 	description: string;
 	details: string[];
 }
