@@ -8,7 +8,7 @@
 		"start": "next start",
 		"lint": "next lint",
 		"test": "vitest",
-		"deploy": "pnpm run build && fly deploy --verbose"
+		"deploy": "pnpm run build && fly deploy"
 	},
 	"dependencies": {
 		"@headlessui/react": "^2.1.2",
