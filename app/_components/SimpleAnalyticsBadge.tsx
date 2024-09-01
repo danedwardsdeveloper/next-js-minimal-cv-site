@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function SimpleAnalyticsBadge() {
@@ -14,12 +15,14 @@ export default function SimpleAnalyticsBadge() {
 						"
 					media="(prefers-color-scheme: dark)"
 				/>
-				<img
+				<Image
 					src="https://simpleanalyticsbadges.com/danedwardsdeveloper.com?mode=light"
 					alt="Simple analytics"
 					loading="lazy"
 					referrerPolicy="no-referrer"
 					crossOrigin="anonymous"
+					width="201"
+					height="50"
 				/>
 			</picture>
 		</Link>
