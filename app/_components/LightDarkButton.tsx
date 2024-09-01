@@ -16,6 +16,7 @@ export default function LightDarkButton() {
 		<button
 			type="button"
 			onClick={toggleTheme}
+			data-testid="light-dark-button"
 			className=" rounded-md   px-2 py-2  ring-typescript ring-offset-2 border-theme-secondary  border-2 transition-colors ease-in-out duration-300 hover:shadow-lg
 			bg-transparent hover:bg-theme-primary hover:bg-opacity-50"
 			aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
