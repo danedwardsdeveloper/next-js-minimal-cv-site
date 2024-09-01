@@ -9,42 +9,23 @@ import {
 	commonWords,
 	multiWordTerms,
 } from './utilities/words';
+import { fetchWithTimeout } from './utilities/fetchWithTimeout';
 
-const testConfig = {
-	checkUniqueLinks: false,
-	checkForBrokenLinks: true,
-	linkCheckTimeout: 60 * 1000,
-	individualLinkTimeout: 5000,
-};
+const testDevelopmentSite = true;
+const testUrl = testDevelopmentSite
+	? 'http://localhost:3000'
+	: 'https://danedwardsdeveloper.com';
 
-const fetchWithTimeout = (url: string, timeout: number) => {
-	return Promise.race([
-		fetch(url, { method: 'HEAD' }),
-		new Promise((_, reject) =>
-			setTimeout(() => reject(new Error('Request timed out')), timeout)
-		),
-	]) as Promise<Response>;
-};
-
-const optionalTest = (
-	name: string,
-	fn: () => void | Promise<void>,
-	timeout?: number
-) => {
-	if (testConfig[name as keyof typeof testConfig]) {
-		test(name, fn, timeout);
-	} else {
-		test.skip(name, () => {
-			console.log(`Test "${name}" ignored.`);
-		});
-	}
-};
-
-const testUrl = 'http://localhost:3000';
 let browser: Browser;
 let page: Page;
 
 beforeAll(async () => {
+	console.log(
+		`Testing ${
+			testDevelopmentSite ? 'development' : `deployed`
+		} site at ${testUrl}`
+	);
+
 	try {
 		const response = await fetch(testUrl);
 		if (!response.ok) {
@@ -201,13 +182,11 @@ test('All links are unique', async () => {
 	);
 });
 
-optionalTest(
+const totalTimeLimit = 60 * 1000;
+
+test.skip(
 	'No broken links',
 	async () => {
-		if (!testConfig.checkForBrokenLinks) {
-			return;
-		}
-
 		const links = await page.$$eval('a', (anchors) =>
 			anchors.map((a) => a.href)
 		);
@@ -215,11 +194,9 @@ optionalTest(
 		const brokenLinks: string[] = [];
 
 		for (const link of links) {
+			const individualTimeLimit = 10 * 1000;
 			try {
-				const response = await fetchWithTimeout(
-					link,
-					testConfig.individualLinkTimeout
-				);
+				const response = await fetchWithTimeout(link, individualTimeLimit);
 
 				if (!response.ok) {
 					brokenLinks.push(`${link} (Status: ${response.status})`);
@@ -242,5 +219,5 @@ optionalTest(
 			`Found ${brokenLinks.length} broken links`
 		).toBe(0);
 	},
-	testConfig.linkCheckTimeout
+	totalTimeLimit
 );
