@@ -1,6 +1,5 @@
 import HorizontalRule from './HorizontalRule';
 import SkillList from './SkillList';
-
 import { copy } from '../_library/copy';
 
 export default function SkillsSection() {
