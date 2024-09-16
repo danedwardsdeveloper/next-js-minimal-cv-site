@@ -23,6 +23,7 @@ export default function SimpleAnalyticsBadge() {
 					crossOrigin="anonymous"
 					width="201"
 					height="50"
+					unoptimized
 				/>
 			</picture>
 		</Link>
